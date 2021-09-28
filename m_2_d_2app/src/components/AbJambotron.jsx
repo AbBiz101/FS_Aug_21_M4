@@ -1,8 +1,8 @@
 import { Jumbotron, Container } from 'react-bootstrap';
 const AbJambo = () => (
 	<Jumbotron fluid>
-		<Container class="bg-dark">
-			<h1>Welcome to Book World!!</h1>
+		<Container class="pl-5 pr-5">
+			<h1>Welcome to Book World!</h1>
 			<p>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
 				similique iusto maiores asperiores beatae eum quidem cum accusantium
