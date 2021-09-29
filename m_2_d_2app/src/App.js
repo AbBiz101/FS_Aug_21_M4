@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AbNavbar from './components/AbNavbar';
@@ -11,10 +10,9 @@ function App() {
 	return (
 		<div>
 			<AbNavbar />
-			{/* <AbHome/> */}
+			<AbHome/>
 			<AbJambo />
 			<AbCard />
-			
 		</div>
 	);
 }
