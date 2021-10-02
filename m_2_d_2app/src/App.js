@@ -1,18 +1,17 @@
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 import AbNavbar from './components/AbNavbar';
-import AbHome from './components/AbHome';
-import AbJambo from './components/AbJambotron';
 import AbCard from './components/AbCard';
-//import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import AbFooter from './components/AbFooter';
+import AbJambotron from './components/AbJambotron';
 
 function App() {
 	return (
 		<div>
 			<AbNavbar />
-			<AbHome/>
-			<AbJambo />
+			<AbJambotron/>
 			<AbCard />
+			<AbFooter />
 		</div>
 	);
 }
