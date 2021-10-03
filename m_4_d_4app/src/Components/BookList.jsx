@@ -23,7 +23,7 @@ export default class BookList extends React.Component {
 					{this.props.books
 						.filter((b) => b.title.toLowerCase().includes(this.state.search))
 						.map((bbk) => (
-							<Col xs={4}>
+							<Col key={bbk.asin} xs={4}>
 								<SingleBook book={bbk} />
 							</Col>
 						))}
