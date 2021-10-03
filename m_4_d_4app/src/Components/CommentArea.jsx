@@ -1,5 +1,7 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
+import CommentList from './CommentList';
+import Commenting from './Commenting';
 export default class ComentArea extends React.Component {
 	state = {
 		comments: [],
@@ -7,7 +9,8 @@ export default class ComentArea extends React.Component {
 	componentDidMount = async () => {
 		try {
 			let resp = await fetch(
-				'https://striveschool-api.herokuapp.com/api/comments/' + this.props.asin,
+				'https://striveschool-api.herokuapp.com/api/comments/' +
+					this.props.asin,
 				{
 					headers: {
 						Authorization:
@@ -15,14 +18,19 @@ export default class ComentArea extends React.Component {
 					},
 				},
 			);
-			let comments=await resp.json()
-            this.setState({ comments });
-        } catch (error) {
-            console.log(error)
-        }
+			let comments = await resp.json();
+			this.setState({ comments });
+		} catch (error) {
+			console.log(error);
+		}
 	};
 
 	render() {
-		return <Form.Control as="textarea" rows={1} />;
+		return (
+            <div>
+                <Commenting/>
+				<CommentList comments={this.state.comments} />
+			</div>
+		);
 	}
 }
