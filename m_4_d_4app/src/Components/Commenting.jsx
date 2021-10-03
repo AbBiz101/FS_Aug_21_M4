@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 
 export default class Commenting extends React.Component {
 	state = {
@@ -9,10 +9,36 @@ export default class Commenting extends React.Component {
 			elementID: this.props.asin,
 		},
 	};
+	sendbtn = async (e) => {
+		e.preventDeafult();
+		try {
+			let resp = await fetch(
+				'https://striveschool-api.herokuapp.com/api/comments',
+				{
+					method: 'POST',
+					body: JSON.stringify(this.state.Comment),
+					headers: {
+						'Content-type': 'application/json',
+						Authorization:
+							'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTRiMjE0ZDRiYjUzZDAwMTViMTllZDMiLCJpYXQiOjE2MzMyODI0NDksImV4cCI6MTYzNDQ5MjA0OX0.Jt6fmjM4PF3HKpx5GVt5uiUBfLcVPLtvh0xCUThTsfs',
+					},
+				},
+			);
+			if (resp.ok) {
+				alert('Comment updated!!');
+			} else {
+				console.log('error');
+				alert('Something went wrong.');
+			}
+		} catch (error) {
+			console.log(error);
+		}
+	};
 	render() {
 		return (
 			<>
 				<Form.Control
+					onSubmit={this.sendbtn}
 					placeholder="Add Your Comment Here"
 					type="text"
 					value={this.state.Comment.comment}
@@ -37,6 +63,7 @@ export default class Commenting extends React.Component {
 					<option>4</option>
 					<option>5</option>
 				</Form.Control>
+				<Button as="input" type="submit" value="Submit" />
 			</>
 		);
 	}

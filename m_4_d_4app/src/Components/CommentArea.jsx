@@ -1,5 +1,4 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
 import CommentList from './CommentList';
 import Commenting from './Commenting';
 export default class ComentArea extends React.Component {
@@ -27,8 +26,8 @@ export default class ComentArea extends React.Component {
 
 	render() {
 		return (
-            <div>
-                <Commenting/>
+			<div>
+				<Commenting />
 				<CommentList comments={this.state.comments} />
 			</div>
 		);
