@@ -13,7 +13,7 @@ export default class Commenting extends React.Component {
 		e.preventDeafult();
 		try {
 			let resp = await fetch(
-				'https://striveschool-api.herokuapp.com/api/comments',
+				'https://striveschool-api.herokuapp.com/api/comments/',
 				{
 					method: 'POST',
 					body: JSON.stringify(this.state.Comment),
@@ -31,14 +31,13 @@ export default class Commenting extends React.Component {
 				alert('Something went wrong.');
 			}
 		} catch (error) {
-			console.log(error);
+			console.log('error');
 		}
 	};
 	render() {
 		return (
-			<>
+			<Form onSubmit={this.sendbtn}>
 				<Form.Control
-					onSubmit={this.sendbtn}
 					placeholder="Add Your Comment Here"
 					type="text"
 					value={this.state.Comment.comment}
@@ -64,7 +63,7 @@ export default class Commenting extends React.Component {
 					<option>5</option>
 				</Form.Control>
 				<Button as="input" type="submit" value="Submit" />
-			</>
+			</Form>
 		);
 	}
 }
