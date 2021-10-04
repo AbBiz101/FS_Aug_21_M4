@@ -10,10 +10,12 @@ export default class Commenting extends React.Component {
 		},
 	};
 	sendbtn = async (e) => {
-		e.preventDeafult();
+		try {
+		} catch (error) {}
+		e.preventDefault();
 		try {
 			let resp = await fetch(
-				'https://striveschool-api.herokuapp.com/api/comments/',
+				'https://striveschool-api.herokuapp.com/api/comments',
 				{
 					method: 'POST',
 					body: JSON.stringify(this.state.Comment),
@@ -28,7 +30,7 @@ export default class Commenting extends React.Component {
 				alert('Comment updated!!');
 			} else {
 				console.log('error');
-				alert('Something went wrong.');
+				alert('Something went cxcxwrong.');
 			}
 		} catch (error) {
 			console.log('error');
