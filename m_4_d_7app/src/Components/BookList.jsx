@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Col, Row, Container, Form } from 'react-bootstrap';
 import SingleBook from './SingleBook';
 
@@ -7,7 +7,6 @@ export default class BookList extends React.Component {
 		books: [],
 		search: '',
 	};
-
 	render() {
 		return (
 			<Container>
@@ -32,3 +31,29 @@ export default class BookList extends React.Component {
 		);
 	}
 }
+
+// export default function BookList() {
+// 	const [books, setBooks] = useState([]);
+// 	const [search, setSearch] = useState('');
+// 	return (
+// 		<Container>
+// 			<Row>
+// 				<Form.Control
+// 					type="text"
+// 					placeholder="Search..."
+// 					value={search}
+// 					onChange={(e) => this.setState({ search: e.target.value })}
+// 				/>
+// 			</Row>
+// 			<Row>
+// 				{books
+// 					.filter((b) => b.title.toLowerCase().includes(search))
+// 					.map((bbk) => (
+// 						<Col key={bbk.asin} xs={4}>
+// 							<SingleBook book={bbk} />
+// 						</Col>
+// 					))}
+// 			</Row>
+// 		</Container>
+// 	);
+// }
