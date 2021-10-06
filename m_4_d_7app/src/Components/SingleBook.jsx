@@ -24,23 +24,22 @@ import CommentArea from '../Components/CommentArea.jsx';
 // 	}
 // }
 
-
 export default function SingleBook() {
-	const [selected, setSelected] = useState(false)
+	const [selected, setSelected] = useState({ selected: false });
 	return (
-			<>
-				<Card
-					style={{
-						border: selected ? '3px solid red' : '1px solid',
-					}}
-					onClick={() => this.setState({ selected: !this.state.selected })}
-				>
-					<Card.Img variant="top" src={this.props.book.img} />
-					<Card.Body>
-						<Card.Title>{this.props.book.title}</Card.Title>
-					</Card.Body>
-				</Card>
-				{selected && <CommentArea asin={this.props.book.asin} />}
-			</>
-		);
+		<>
+			<Card
+				style={{
+					border: selected ? '3px solid red' : '1px solid',
+				}}
+				onClick={() => this.setState({ selected: !this.state.selected })}
+			>
+				<Card.Img variant="top" src={this.props.book.img} />
+				<Card.Body>
+					<Card.Title>{this.props.book.title}</Card.Title>
+				</Card.Body>
+			</Card>
+			{selected && <CommentArea asin={this.props.book.asin} />}
+		</>
+	);
 }
