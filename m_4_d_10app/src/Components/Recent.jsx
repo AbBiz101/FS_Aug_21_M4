@@ -8,6 +8,7 @@ export default function Recent() {
 				<BigCard />
 				<BigCard />
 				<BigCard />
+				<BigCard />
 			</div>
 		</div>
 	);

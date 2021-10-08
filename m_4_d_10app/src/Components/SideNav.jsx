@@ -8,6 +8,7 @@ import Likedicon from '../images/icons8-favorite-folder-50.png';
 import Instalicon from '../images/icons8-scroll-down-50.png';
 import GoodMorning from './GoodMorning';
 import Recent from './Recent';
+import BigCard from './BigCard';
 export default function SideNav() {
 	return (
 		<div className="container-fluid m-0 main-body">
@@ -148,7 +149,8 @@ export default function SideNav() {
 					</div>
 				</div>
 				<GoodMorning />
-				<Recent />
+					<BigCard />
+				
 			</div>
 		</div>
 	);
