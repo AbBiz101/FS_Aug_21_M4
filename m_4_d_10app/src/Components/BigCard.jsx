@@ -1,24 +1,17 @@
 import React from 'react';
 export default function BigCard() {
 	return (
-		<div className="good-morning-card ml-3 mt-4 mb-3 active ">
-			<div className="row no-gutters">
-				<div className="col-3">
-					<img src="" style={{ borderRadius: 4 }} width={80} />
-				</div>
-				<div className="col-5 ml-5">
-					<div className="card-body">
-						<h6 className="card-title text-white">Burning Jazz-rock Fusion</h6>
-						<button
-							id="btn-with-style"
-							type="button"
-							onclick="playTrack()"
-							className="btn btn-success"
-						>
-							▶
-						</button>
-					</div>
-				</div>
+		<div className="Recently-card col-2 ml-3 p-2 ">
+			<img
+				src="https://i.scdn.co/image/ab67616d0000b2735218a8028e73b7fd7d785514"
+				className="card-img-top"
+			/>
+			<div className="card-body mt-2">
+				<h6 className="card-title text-white">Card title</h6>
+				<h5 className="card-text">Some quick example text</h5>
+				<button id="btn-with-style1" type="button" className="btn btn-dark">
+					▶
+				</button>
 			</div>
 		</div>
 	);
