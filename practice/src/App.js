@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import NavBar from './Components/NavBar';
 import { ExpenseBox } from './Components/ExpenseBox';
+import NewExpense from './Components/NewExpense';
 
 export default function App() {
 	const expenses = [
@@ -25,10 +25,17 @@ export default function App() {
 			date: new Date(2021, 5, 12),
 		},
 	];
+	const addExpenseHandler = (expense) => {
+		console.log('app.js');
+		console.log(expense);
+		expenses.push(expense);
+		console.log(expenses);
+	};
+
 	return (
 		<>
-			<NavBar />
-
+			<h1>555</h1>
+			<NewExpense addExpense={addExpenseHandler} />
 			<ExpenseBox data={expenses} />
 		</>
 	);
