@@ -1,9 +1,9 @@
 import React from 'react';
-export default function BigCard() {
+export default function BigCard(porps) {
 	return (
 		<div className="Recently-card col-2 ml-3 p-2 ">
 			<img
-				src="https://i.scdn.co/image/ab67616d0000b2735218a8028e73b7fd7d785514"
+				src={porps.img}
 				className="card-img-top"
 			/>
 			<div className="card-body mt-2">
