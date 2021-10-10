@@ -38,7 +38,7 @@ export default function ExpenseForm(porps) {
 	};
 
 	return (
-		<form onSubmit={submitHandler} className="new-expense">
+		<form onSubmit={submitHandler} >
 			<div className="new-expense__controls">
 				<div className="new-expense__control">
 					<label>Title</label>

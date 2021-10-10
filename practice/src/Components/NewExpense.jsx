@@ -7,7 +7,8 @@ export default function NewExpense(props) {
 	};
 
 	return (
-        <div>
+		<div className="new-expense">
+			<button>Add New Expense</button>
 			<ExpenseForm onSaveData={SaveDataHandler} />;
 		</div>
 	);
