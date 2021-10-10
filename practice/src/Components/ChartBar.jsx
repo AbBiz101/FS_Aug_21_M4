@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function ChartBar(props) {
 	const barHeight = '0%';
-	if (props.max > 0) {
+	if (props.maxVal > 0) {
 		barHeight = Math.round((props.value / props.maxVal) * 100);
 	}
 	return (

@@ -1,12 +1,12 @@
 import { React, useState } from 'react';
 import Expenseitem from './Expenseitem';
+import ExpensesChart from './ExpensesChart';
 import ExpensFilter from './ExpensFilter';
 
 export function ExpenseBox(props) {
-	const [year, setYear] = useState('');
+	const [year, setYear] = useState('2020');
 	const yearFilterHandler = (selectedyear) => {
 		setYear(selectedyear);
-		console.log('fd', year, 'fd', selectedyear);
 	};
 	const filteredExp = props.data.filter((expense) => {
 		return expense.date.getFullYear().toString() === year;
@@ -26,6 +26,7 @@ export function ExpenseBox(props) {
 	return (
 		<div className="expenses">
 			<ExpensFilter selected={year} onFilter={yearFilterHandler} />;
+			<ExpensesChart expenses={filterdexpenseContent} />
 			{filterdexpenseContent}
 		</div>
 	);
