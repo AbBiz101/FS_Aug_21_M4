@@ -2,6 +2,7 @@ import { React, useState } from 'react';
 import Date from './Date';
 
 export default function Expenseitem(props) {
+	
 	return (
 		<div className="expense-item">
 			<Date date={props.date} />

@@ -1,40 +1,37 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { React, useState } from 'react';
 import { ExpenseBox } from './Components/ExpenseBox';
 import NewExpense from './Components/NewExpense';
+const orignalexpenses = [
+	{
+		id: 'e1',
+		title: 'Toilet Paper',
+		amount: 94.12,
+		date: new Date(2020, 7, 14),
+	},
+	{ id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) },
+	{
+		id: 'e3',
+		title: 'Car Insurance',
+		amount: 294.67,
+		date: new Date(2019, 2, 28),
+	},
+	{
+		id: 'e4',
+		title: 'New Desk (Wooden)',
+		amount: 450,
+		date: new Date(2021, 5, 12),
+	},
+];
 
 export default function App() {
-	const expenses = [
-		{
-			id: 'e1',
-			title: 'Toilet Paper',
-			amount: 94.12,
-			date: new Date(2020, 7, 14),
-		},
-		{ id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) },
-		{
-			id: 'e3',
-			title: 'Car Insurance',
-			amount: 294.67,
-			date: new Date(2021, 2, 28),
-		},
-		{
-			id: 'e4',
-			title: 'New Desk (Wooden)',
-			amount: 450,
-			date: new Date(2021, 5, 12),
-		},
-	];
+	const [expenses, setExpenses] = useState(orignalexpenses);
 	const addExpenseHandler = (expense) => {
-		console.log('app.js');
-		console.log(expense);
-		expenses.push(expense);
-		console.log(expenses);
+		setExpenses((prevExp) => [expense, ...prevExp]);
 	};
 
 	return (
 		<>
-			<h1>555</h1>
 			<NewExpense addExpense={addExpenseHandler} />
 			<ExpenseBox data={expenses} />
 		</>

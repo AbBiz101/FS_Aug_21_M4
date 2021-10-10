@@ -11,8 +11,8 @@ export default function ExpensFilter(props) {
 				className="expenses-filter__control"
 			>
 				<label>Filter by year</label>
-                <Form.Control className="col-2 px-4" onChange={dropdownHandler} as="select">
-					<option>2021</option>
+                <Form.Control className="col-3 px-4" onChange={dropdownHandler} as="select">
+					<option >2021</option>
 					<option>2020</option>
 					<option>2019</option>
 					<option>2018</option>
